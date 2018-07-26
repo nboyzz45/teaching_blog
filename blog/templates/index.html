@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>
+        <small>RECENT POSTS</small>
+    </h4>
+    {% for blog in blogs %}
+        <hr>
+        <a href="{% url 'blogs:blog' blog.slug %}"><h2>{{ blog.title }}</h2></a>
+        <h5><span class="glyphicon glyphicon-time"></span> Post At {{ blog.pub_date }}</h5>
+    {% endfor %}
+
+{% endblock %}
